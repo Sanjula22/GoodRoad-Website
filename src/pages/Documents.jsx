@@ -50,15 +50,45 @@ const Documents = () => {
       title: 'Project Charter',
       status: 'Available',
       date: 'Jan 2026',
-      link: '#',
+      link: '/Documents/Project Charter/Charter.pdf',
       image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
       title: 'Proposal Document',
       status: 'Available',
       date: 'Feb 2026',
-      link: '#',
-      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      isFolder: true,
+      subDocs: [
+        {
+          title: 'Individual Proposal',
+          subtitle: 'Kanishka Rathnayake',
+          date: 'Feb 2026',
+          status: 'Available',
+          link: '/Documents/Proposal Document/Kanishka.pdf'
+        },
+        {
+          title: 'Individual Proposal',
+          subtitle: 'Nimesh Liyanage',
+          date: 'Feb 2026',
+          status: 'Available',
+          link: '/Documents/Proposal Document/Nimesh.pdf'
+        },
+        {
+          title: 'Individual Proposal',
+          subtitle: 'Sanjula Wijerathna',
+          date: 'Feb 2026',
+          status: 'Available',
+          link: '/Documents/Proposal Document/Sanjula.pdf'
+        },
+        {
+          title: 'Individual Proposal',
+          subtitle: 'Pabasara Hendawitharana',
+          date: 'Feb 2026',
+          status: 'Available',
+          link: '/Documents/Proposal Document/Pabasara.pdf'
+        }
+      ]
     },
     {
       title: 'Check List Documents',
@@ -82,14 +112,14 @@ const Documents = () => {
         },
         {
           title: 'Individual Report',
-          subtitle: 'Member 1',
+          subtitle: 'Kanishka Rathnayake',
           date: 'Oct 2026',
           status: 'Pending',
           link: '#',
         },
         {
           title: 'Individual Report',
-          subtitle: 'Member 2',
+          subtitle: 'Nimesh Liyanage',
           date: 'Oct 2026',
           status: 'Pending',
           link: '#',
@@ -99,14 +129,14 @@ const Documents = () => {
           subtitle: 'Sanjula Wijerathna',
           date: 'Oct 2026',
           status: 'Available',
-          link: '/Documents/Individual Final Reopts/Sanjula.pdf',
+          link: '/Documents/Final Documents/Individual Final Reopts/Sanjula.pdf',
         },
         {
           title: 'Individual Report',
           subtitle: 'Pabasara Hendawitharana',
           date: 'Oct 2026',
           status: 'Available',
-          link: '/Documents/Individual Final Reopts/Pabasara.pdf',
+          link: '/Documents/Final Documents/Individual Final Reopts/Pabasara.pdf',
         },
       ]
     }
