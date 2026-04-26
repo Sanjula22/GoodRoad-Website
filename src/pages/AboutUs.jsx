@@ -22,31 +22,31 @@ const AboutUs = () => {
       role: 'Project Member',
       image: '/Images/Kanishka.png',
       email: 'kanishka@example.com',
-      linkedin: 'https://linkedin.com/in/kanishka',
+      linkedin: 'https://www.linkedin.com/in/kanishkarathnayake/',
       achievements: 'Specialist in System Analysis and Development.'
     },
     {
       name: 'Nimesh Liyanage',
       role: 'Project Member',
       image: '/Images/NImesh.png',
-      email: 'nimesh@example.com',
-      linkedin: 'https://linkedin.com/in/nimesh',
+      email: 'nimesh0723@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/nimesh-lk/',
       achievements: 'Expert in Technical Research and Implementation.'
     },
     {
       name: 'Sanjula Wijerathna',
       role: 'Project Member',
       image: '/Images/Sanjula.png',
-      email: 'sanjula@example.com',
-      linkedin: 'https://linkedin.com/in/sanjula',
+      email: 'sanjula200249@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/sanjula-wijerathna-9367622a4/',
       achievements: 'Lead Researcher and Project Coordinator.'
     },
     {
       name: 'Pabasara Hendawitharana',
       role: 'Project Member',
       image: '/Images/Pabasara.png',
-      email: 'pabasara@example.com',
-      linkedin: 'https://linkedin.com/in/pabasara',
+      email: 'kpabasara137@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/kavindya-pabasara/',
       achievements: 'Specialist in Backend Architecture and Integration.'
     }
   ];
@@ -98,21 +98,21 @@ const AboutUs = () => {
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-              <a 
-                href={`mailto:${member.email}`} 
-                style={{ color: 'var(--text-muted)', transition: 'all 0.2s' }} 
-                onMouseOver={e => e.currentTarget.style.color = 'var(--primary)'} 
+              <a
+                href={`mailto:${member.email}`}
+                style={{ color: 'var(--text-muted)', transition: 'all 0.2s' }}
+                onMouseOver={e => e.currentTarget.style.color = 'var(--primary)'}
                 onMouseOut={e => e.currentTarget.style.color = 'var(--text-muted)'}
                 title="Email"
               >
                 <Mail size={24} />
               </a>
-              <a 
-                href={member.linkedin} 
-                target="_blank" 
+              <a
+                href={member.linkedin}
+                target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: 'var(--text-muted)', transition: 'all 0.2s' }} 
-                onMouseOver={e => e.currentTarget.style.color = 'var(--primary)'} 
+                style={{ color: 'var(--text-muted)', transition: 'all 0.2s' }}
+                onMouseOver={e => e.currentTarget.style.color = 'var(--primary)'}
                 onMouseOut={e => e.currentTarget.style.color = 'var(--text-muted)'}
                 title="LinkedIn"
               >

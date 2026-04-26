@@ -1,11 +1,24 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FileText, Download, X, Maximize, ChevronRight, ArrowLeft } from 'lucide-react';
 
 const Documents = () => {
   const [selectedDoc, setSelectedDoc] = useState(null);
   const [activeSubDoc, setActiveSubDoc] = useState(null);
+  const [textContent, setTextContent] = useState(null);
   const iframeRef = useRef(null);
+
+  useEffect(() => {
+    const doc = activeSubDoc || selectedDoc;
+    if (doc && !doc.isFolder && doc.link && doc.link.endsWith('.txt')) {
+      fetch(doc.link)
+        .then(res => res.text())
+        .then(text => setTextContent(text))
+        .catch(err => console.error('Error fetching text file:', err));
+    } else {
+      setTextContent(null);
+    }
+  }, [selectedDoc, activeSubDoc]);
 
   const toggleFullScreen = () => {
     const element = iframeRef.current;
@@ -29,6 +42,7 @@ const Documents = () => {
   const closeModal = () => {
     setSelectedDoc(null);
     setActiveSubDoc(null);
+    setTextContent(null);
   };
 
   const containerVariants = {
@@ -92,8 +106,9 @@ const Documents = () => {
     },
     {
       title: 'Check List Documents',
-      status: 'Pending',
-      date: 'July 2026',
+      status: 'Available',
+      date: 'April 2026',
+      link: '/Documents/Checklist Documents/Checklist_01.txt',
       image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
@@ -257,9 +272,11 @@ const Documents = () => {
                 <div style={{ display: 'flex', gap: '12px' }}>
                   {!selectedDoc.isFolder || activeSubDoc ? (
                     <>
-                      <button onClick={toggleFullScreen} style={{ background: 'var(--surface-hover)', border: '1px solid var(--border)', color: 'white', cursor: 'pointer', padding: '10px', borderRadius: '12px', display: 'flex' }} title="Full Screen">
-                        <Maximize size={20} />
-                      </button>
+                      {!textContent && (
+                        <button onClick={toggleFullScreen} style={{ background: 'var(--surface-hover)', border: '1px solid var(--border)', color: 'white', cursor: 'pointer', padding: '10px', borderRadius: '12px', display: 'flex' }} title="Full Screen">
+                          <Maximize size={20} />
+                        </button>
+                      )}
                       <a href={currentViewingDoc.link} download style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 20px', background: 'var(--surface-hover)', border: '1px solid var(--border)', borderRadius: '12px', color: 'white', textDecoration: 'none', fontSize: '0.95rem', fontWeight: 600 }}>
                         <Download size={18} />
                       </a>
@@ -312,6 +329,85 @@ const Documents = () => {
                           </div>
                         </div>
                       ))}
+                    </div>
+                  </div>
+                ) : textContent ? (
+                  <div style={{ padding: '40px', minHeight: '100%', background: '#0f172a', display: 'flex', justifyContent: 'center' }}>
+                    <div style={{
+                      background: 'white',
+                      width: '100%',
+                      maxWidth: '800px',
+                      minHeight: '100%',
+                      padding: '60px 80px',
+                      borderRadius: '4px',
+                      boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
+                      color: '#1e293b',
+                      position: 'relative'
+                    }}>
+                      {/* Document Header Decoration */}
+                      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'var(--gradient-main)' }}></div>
+
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px', borderBottom: '2px solid #f1f5f9', paddingBottom: '20px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                          <FileText size={32} color="var(--primary)" />
+                          <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>CHECK LIST 01</h3>
+                        </div>
+                        <div style={{ textAlign: 'right' }}>
+                          <p style={{ fontSize: '0.8rem', color: '#64748b', margin: 0, fontWeight: 600 }}>GOODROAD RESEARCH</p>
+                          <p style={{ fontSize: '0.8rem', color: '#94a3b8', margin: 0 }}>{currentViewingDoc.date}</p>
+                        </div>
+                      </div>
+
+                      <div style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
+                        {textContent.split('\n').map((line, i) => {
+                          const trimmedLine = line.trim();
+                          const isUrl = trimmedLine.startsWith('http');
+                          return (
+                            <div key={i} style={{ marginBottom: '15px' }}>
+                              {isUrl ? (
+                                <div style={{ marginTop: '10px' }}>
+                                  <span style={{ display: 'block', fontSize: '0.9rem', color: '#64748b', marginBottom: '4px', fontWeight: 600 }}>Reference Link:</span>
+                                  <a
+                                    href={trimmedLine}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                      color: 'var(--primary)',
+                                      textDecoration: 'none',
+                                      fontWeight: 700,
+                                      display: 'inline-block',
+                                      padding: '12px 24px',
+                                      background: '#f0f9ff',
+                                      border: '1px solid #bae6fd',
+                                      borderRadius: '8px',
+                                      fontSize: '1rem',
+                                      wordBreak: 'break-all',
+                                      transition: 'all 0.2s'
+                                    }}
+                                    onMouseOver={e => {
+                                      e.currentTarget.style.background = '#e0f2fe';
+                                      e.currentTarget.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseOut={e => {
+                                      e.currentTarget.style.background = '#f0f9ff';
+                                      e.currentTarget.style.transform = 'translateY(0)';
+                                    }}
+                                  >
+                                    {trimmedLine}
+                                  </a>
+                                </div>
+                              ) : (
+                                trimmedLine
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* Document Footer */}
+                      <div style={{ marginTop: '80px', borderTop: '1px solid #f1f5f9', paddingTop: '20px', textAlign: 'center' }}>
+                        <p style={{ fontSize: '0.8rem', color: '#94a3b8' }}>© 2026 GoodRoad Research Project. All rights reserved.</p>
+                      </div>
                     </div>
                   </div>
                 ) : (
