@@ -156,7 +156,7 @@ const Home = () => {
             { value: 67, suffix: '%', label: 'Undetected violations', desc: 'Occurring outside traditional fixed monitoring zones.' },
             { value: 95, suffix: '%+', label: 'AI Detection Accuracy', desc: 'Achieved through Vision-Language model validation.' },
             { value: 70, suffix: '%', label: 'Violation Reduction', desc: 'Projected through decentralized community monitoring.' },
-            { value: 2.3, prefix: 'LKR ', suffix: 'M+', label: 'Citizen Earnings', desc: 'Projected annually through our dynamic reward system.', decimals: 1 },
+            { value: 2.3, prefix: '', suffix: 'M+', label: 'Citizen Earnings', desc: 'Projected annually through our dynamic reward system.', decimals: 1 },
             { value: 24, suffix: '/7', label: 'Global Enforcement', desc: 'Operating across all road networks without infrastructure limits.' }
           ].map((stat, i) => (
             <motion.div
