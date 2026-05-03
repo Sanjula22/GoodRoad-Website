@@ -21,7 +21,7 @@ const AboutUs = () => {
       name: 'Kanishka Rathnayake',
       role: 'Project Member',
       image: '/Images/Kanishka.png',
-      email: 'kanishka@example.com',
+      email: 'kanishkadilshan861@gmail.com',
       linkedin: 'https://www.linkedin.com/in/kanishkarathnayake/',
       achievements: 'Specialist in System Analysis and Development.'
     },

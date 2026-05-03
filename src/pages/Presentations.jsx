@@ -43,31 +43,32 @@ const Presentations = () => {
   const presentations = [
     {
       title: 'Proposal Presentation',
-      date: 'Feb 2026',
+      date: 'September 2025',
       available: true,
       link: '/Presentations/Proposal Presentation.pdf',
       image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
       title: 'Progress Presentation 1',
-      date: 'April 2026',
+      date: 'January 2026',
       available: true,
       link: '/Presentations/Progress Presentation 1.pdf',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
-    { 
-      title: 'Progress Presentation 2', 
-      date: 'June 2026', 
-      available: true, 
+    {
+      title: 'Progress Presentation 2',
+      date: 'March 2026',
+      available: true,
       link: '/Presentations/Progress Presentation 2.pdf',
       video: '/Presentations/Progress Presentation Video.mp4',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' 
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
-    { 
-      title: 'Final Presentation', 
-      date: 'August 2026', 
-      available: false, 
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80' 
+    {
+      title: 'Final Presentation',
+      date: 'May 2026',
+      available: false,
+      link: '/Presentations/Progress Presentation 1.pdf',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     }
   ];
 
@@ -103,8 +104,8 @@ const Presentations = () => {
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(15, 23, 42, 0.4)', zIndex: 1 }}></div>
               <img src={pres.image} alt={pres.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               {pres.available && (
-                <div 
-                  style={{ 
+                <div
+                  style={{
                     position: 'absolute', top: '12px', right: '12px', zIndex: 2,
                     background: 'rgba(34, 197, 94, 0.9)', color: 'white', padding: '4px 12px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 700
                   }}
@@ -120,11 +121,11 @@ const Presentations = () => {
                 </div>
                 <p style={{ color: 'var(--text-muted)', marginBottom: '20px', textAlign: 'center' }}>Presented on {pres.date}</p>
               </div>
-              <button 
+              <button
                 onClick={() => pres.available && handleOpenModal(pres)}
-                className="btn" 
-                style={{ 
-                  width: '100%', 
+                className="btn"
+                style={{
+                  width: '100%',
                   justifyContent: 'center',
                   background: pres.available ? 'var(--gradient-main)' : 'var(--surface-hover)',
                   color: pres.available ? 'white' : 'var(--text-muted)',
@@ -189,13 +190,13 @@ const Presentations = () => {
                   <h2 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '4px' }}>{selectedPres.title}</h2>
                   <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>{selectedPres.date}</p>
                 </div>
-                
+
                 <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
                   {selectedPres.video && (
                     <div style={{ display: 'flex', background: 'var(--surface-hover)', borderRadius: '12px', padding: '4px', border: '1px solid var(--border)' }}>
-                      <button 
+                      <button
                         onClick={() => setViewMode('slides')}
-                        style={{ 
+                        style={{
                           padding: '8px 16px', borderRadius: '8px', border: 'none',
                           background: viewMode === 'slides' ? 'var(--gradient-main)' : 'transparent',
                           color: viewMode === 'slides' ? 'white' : 'var(--text-muted)',
@@ -204,9 +205,9 @@ const Presentations = () => {
                       >
                         <FileText size={16} /> Slides
                       </button>
-                      <button 
+                      <button
                         onClick={() => setViewMode('video')}
-                        style={{ 
+                        style={{
                           padding: '8px 16px', borderRadius: '8px', border: 'none',
                           background: viewMode === 'video' ? 'var(--gradient-main)' : 'transparent',
                           color: viewMode === 'video' ? 'white' : 'var(--text-muted)',
@@ -218,52 +219,52 @@ const Presentations = () => {
                     </div>
                   )}
 
-                  <button 
+                  <button
                     onClick={toggleFullScreen}
-                    style={{ 
-                      background: 'var(--surface-hover)', border: '1px solid var(--border)', color: 'white', 
+                    style={{
+                      background: 'var(--surface-hover)', border: '1px solid var(--border)', color: 'white',
                       cursor: 'pointer', padding: '10px', borderRadius: '12px', display: 'flex', alignItems: 'center'
                     }}
                     title="Full Screen"
                   >
                     <Maximize size={20} />
                   </button>
-                  <a 
-                    href={viewMode === 'slides' ? selectedPres.link : selectedPres.video} 
-                    download 
-                    style={{ 
-                      display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 20px', 
-                      background: 'var(--surface-hover)', border: '1px solid var(--border)', borderRadius: '12px', color: 'white', 
+                  <a
+                    href={viewMode === 'slides' ? selectedPres.link : selectedPres.video}
+                    download
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 20px',
+                      background: 'var(--surface-hover)', border: '1px solid var(--border)', borderRadius: '12px', color: 'white',
                       textDecoration: 'none', fontSize: '0.95rem', fontWeight: 600
                     }}
                   >
                     <Download size={18} />
                   </a>
-                  <button 
+                  <button
                     onClick={() => setSelectedPres(null)}
-                    style={{ 
-                      background: 'var(--surface-hover)', border: '1px solid var(--border)', color: 'white', 
-                      cursor: 'pointer', padding: '10px', borderRadius: '12px', display: 'flex', alignItems: 'center' 
+                    style={{
+                      background: 'var(--surface-hover)', border: '1px solid var(--border)', color: 'white',
+                      cursor: 'pointer', padding: '10px', borderRadius: '12px', display: 'flex', alignItems: 'center'
                     }}
                   >
                     <X size={20} />
                   </button>
                 </div>
               </div>
-              
+
               <div style={{ flex: 1, background: '#1e293b', position: 'relative' }}>
                 {viewMode === 'slides' ? (
                   <>
                     {selectedPres.link.toLowerCase().endsWith('.pdf') ? (
-                      <iframe 
+                      <iframe
                         ref={iframeRef}
-                        src={`${selectedPres.link}#view=FitH&pagemode=none&toolbar=0`} 
+                        src={`${selectedPres.link}#view=FitH&pagemode=none&toolbar=0`}
                         style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
                         title={selectedPres.title}
                         allowFullScreen
                       />
                     ) : (
-                      <div 
+                      <div
                         ref={iframeRef}
                         style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'white', padding: '40px', textAlign: 'center' }}
                       >
@@ -272,12 +273,12 @@ const Presentations = () => {
                         </div>
                         <h3 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>Interactive Preview Unavailable</h3>
                         <p style={{ maxWidth: '450px', marginBottom: '32px', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                          This presentation file format cannot be previewed directly in the browser. 
+                          This presentation file format cannot be previewed directly in the browser.
                           Please download the file to view it on your device.
                         </p>
-                        <a 
-                          href={selectedPres.link} 
-                          download 
+                        <a
+                          href={selectedPres.link}
+                          download
                           className="btn"
                           style={{ background: 'var(--gradient-main)', color: 'white', textDecoration: 'none', padding: '12px 32px' }}
                         >
@@ -288,9 +289,9 @@ const Presentations = () => {
                   </>
                 ) : (
                   <div ref={iframeRef} style={{ width: '100%', height: '100%', background: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <video 
-                      src={selectedPres.video} 
-                      controls 
+                    <video
+                      src={selectedPres.video}
+                      controls
                       autoPlay
                       style={{ maxWidth: '100%', maxHeight: '100%', outline: 'none' }}
                     />

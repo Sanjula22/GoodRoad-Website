@@ -63,42 +63,42 @@ const Documents = () => {
     {
       title: 'Project Charter',
       status: 'Available',
-      date: 'Jan 2026',
+      date: 'July 2025',
       link: '/Documents/Project Charter/Charter.pdf',
       image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
       title: 'Proposal Document',
       status: 'Available',
-      date: 'Feb 2026',
+      date: 'September 2025',
       image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       isFolder: true,
       subDocs: [
         {
           title: 'Individual Proposal',
           subtitle: 'Kanishka Rathnayake',
-          date: 'Feb 2026',
+          date: 'September 2025',
           status: 'Available',
           link: '/Documents/Proposal Document/Kanishka.pdf'
         },
         {
           title: 'Individual Proposal',
           subtitle: 'Nimesh Liyanage',
-          date: 'Feb 2026',
+          date: 'September 2025',
           status: 'Available',
           link: '/Documents/Proposal Document/Nimesh.pdf'
         },
         {
           title: 'Individual Proposal',
           subtitle: 'Sanjula Wijerathna',
-          date: 'Feb 2026',
+          date: 'September 2025',
           status: 'Available',
           link: '/Documents/Proposal Document/Sanjula.pdf'
         },
         {
           title: 'Individual Proposal',
           subtitle: 'Pabasara Hendawitharana',
-          date: 'Feb 2026',
+          date: 'September 2025',
           status: 'Available',
           link: '/Documents/Proposal Document/Pabasara.pdf'
         }
@@ -107,49 +107,49 @@ const Documents = () => {
     {
       title: 'Check List Documents',
       status: 'Available',
-      date: 'April 2026',
+      date: 'January 2026',
       link: '/Documents/Checklist Documents/Checklist_01.txt',
       image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
       title: 'Final Document (Main & 4 Subs)',
       status: 'Available',
-      date: 'Oct 2026',
+      date: 'May 2026',
       image: 'https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       isFolder: true,
       subDocs: [
         {
           title: 'Final Report',
           subtitle: 'Document',
-          date: 'Oct 2026',
+          date: 'May 2026',
           status: 'Pending',
-          link: '#'
+          link: '/Documents/Final Documents/Individual Final Reopts/Sanjula.pdf'
         },
         {
           title: 'Individual Report',
           subtitle: 'Kanishka Rathnayake',
-          date: 'Oct 2026',
+          date: 'May 2026',
           status: 'Pending',
-          link: '#',
+          link: '/Documents/Final Documents/Individual Final Reopts/Sanjula.pdf',
         },
         {
           title: 'Individual Report',
           subtitle: 'Nimesh Liyanage',
-          date: 'Oct 2026',
+          date: 'May 2026',
           status: 'Pending',
-          link: '#',
+          link: '/Documents/Final Documents/Individual Final Reopts/Sanjula.pdf',
         },
         {
           title: 'Individual Report',
           subtitle: 'Sanjula Wijerathna',
-          date: 'Oct 2026',
+          date: 'May 2026',
           status: 'Available',
           link: '/Documents/Final Documents/Individual Final Reopts/Sanjula.pdf',
         },
         {
           title: 'Individual Report',
           subtitle: 'Pabasara Hendawitharana',
-          date: 'Oct 2026',
+          date: 'May 2026',
           status: 'Available',
           link: '/Documents/Final Documents/Individual Final Reopts/Pabasara.pdf',
         },
@@ -334,31 +334,32 @@ const Documents = () => {
                 ) : textContent ? (
                   <div style={{ padding: '40px', minHeight: '100%', background: '#0f172a', display: 'flex', justifyContent: 'center' }}>
                     <div style={{
-                      background: 'white',
+                      background: 'var(--surface)',
                       width: '100%',
                       maxWidth: '800px',
                       minHeight: '100%',
                       padding: '60px 80px',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
-                      color: '#1e293b',
-                      position: 'relative'
+                      color: 'var(--text-main)',
+                      position: 'relative',
+                      border: '1px solid var(--border)'
                     }}>
                       {/* Document Header Decoration */}
                       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'var(--gradient-main)' }}></div>
 
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px', borderBottom: '2px solid #f1f5f9', paddingBottom: '20px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px', borderBottom: '2px solid var(--border)', paddingBottom: '20px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                           <FileText size={32} color="var(--primary)" />
-                          <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>CHECK LIST 01</h3>
+                          <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-main)', margin: 0 }}>CHECK LIST 01</h3>
                         </div>
                         <div style={{ textAlign: 'right' }}>
-                          <p style={{ fontSize: '0.8rem', color: '#64748b', margin: 0, fontWeight: 600 }}>GOODROAD RESEARCH</p>
-                          <p style={{ fontSize: '0.8rem', color: '#94a3b8', margin: 0 }}>{currentViewingDoc.date}</p>
+                          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0, fontWeight: 600 }}>GOODROAD RESEARCH</p>
+                          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: 0 }}>{currentViewingDoc.date}</p>
                         </div>
                       </div>
 
-                      <div style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#334155' }}>
+                      <div style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-main)' }}>
                         {textContent.split('\n').map((line, i) => {
                           const trimmedLine = line.trim();
                           const isUrl = trimmedLine.startsWith('http');
@@ -377,19 +378,19 @@ const Documents = () => {
                                       fontWeight: 700,
                                       display: 'inline-block',
                                       padding: '12px 24px',
-                                      background: '#f0f9ff',
-                                      border: '1px solid #bae6fd',
+                                      background: 'rgba(59, 130, 246, 0.1)',
+                                      border: '1px solid rgba(59, 130, 246, 0.2)',
                                       borderRadius: '8px',
                                       fontSize: '1rem',
                                       wordBreak: 'break-all',
                                       transition: 'all 0.2s'
                                     }}
                                     onMouseOver={e => {
-                                      e.currentTarget.style.background = '#e0f2fe';
+                                      e.currentTarget.style.background = 'rgba(59, 130, 246, 0.2)';
                                       e.currentTarget.style.transform = 'translateY(-2px)';
                                     }}
                                     onMouseOut={e => {
-                                      e.currentTarget.style.background = '#f0f9ff';
+                                      e.currentTarget.style.background = 'rgba(59, 130, 246, 0.1)';
                                       e.currentTarget.style.transform = 'translateY(0)';
                                     }}
                                   >
@@ -405,9 +406,7 @@ const Documents = () => {
                       </div>
 
                       {/* Document Footer */}
-                      <div style={{ marginTop: '80px', borderTop: '1px solid #f1f5f9', paddingTop: '20px', textAlign: 'center' }}>
-                        <p style={{ fontSize: '0.8rem', color: '#94a3b8' }}>© 2026 GoodRoad Research Project. All rights reserved.</p>
-                      </div>
+
                     </div>
                   </div>
                 ) : (

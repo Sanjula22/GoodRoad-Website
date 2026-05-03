@@ -7,7 +7,7 @@ const Milestones = () => {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
       transition: { staggerChildren: 0.1 }
     },
@@ -58,7 +58,7 @@ const Milestones = () => {
   ];
 
   return (
-    <motion.div 
+    <motion.div
       className="page-transition"
       variants={containerVariants}
       initial="hidden"
@@ -75,7 +75,7 @@ const Milestones = () => {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         {milestones.map((milestone) => (
           <motion.div key={milestone.id} variants={itemVariants} style={{ marginBottom: '16px' }}>
-            <button 
+            <button
               onClick={() => setActiveTab(activeTab === milestone.id ? null : milestone.id)}
               className="card"
               style={{
@@ -102,9 +102,9 @@ const Milestones = () => {
                   exit={{ height: 0, opacity: 0 }}
                   style={{ overflow: 'hidden' }}
                 >
-                  <div style={{ 
-                    padding: '24px', 
-                    background: 'var(--surface-hover)', 
+                  <div style={{
+                    padding: '24px',
+                    background: 'var(--surface-hover)',
                     borderRadius: '0 0 12px 12px',
                     marginTop: '-12px',
                     border: '1px solid var(--border)',

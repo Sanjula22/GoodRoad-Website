@@ -32,20 +32,26 @@ const Navbar = () => {
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '70px' }}>
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div style={{
-            background: 'var(--gradient-main)',
-            width: '36px',
-            height: '36px',
-            borderRadius: '8px',
+          <img 
+            src="/Images/Logo_1 (3).png" 
+            alt="GoodRoad Logo" 
+            style={{ 
+              height: '45px', 
+              width: 'auto',
+              filter: 'brightness(0) invert(1) drop-shadow(0 0 5px rgba(59, 130, 246, 0.5))',
+              marginRight: '8px'
+            }} 
+          />
+          <span style={{ 
+            fontSize: '1.8rem', 
+            fontWeight: 800, 
+            letterSpacing: '-0.03em', 
+            color: '#ffffff',
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: 'bold',
-            fontSize: '20px'
+            alignItems: 'center'
           }}>
-            G
-          </div>
-          <span style={{ fontSize: '1.25rem', fontWeight: 700, letterSpacing: '0.05em' }}>GoodRoad</span>
+            Good<span style={{ color: 'var(--primary)', fontWeight: 900 }}>Road</span>
+          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -53,8 +59,8 @@ const Navbar = () => {
           <ul style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
             {navLinks.map((link) => (
               <li key={link.name} style={{ position: 'relative' }}>
-                <Link 
-                  to={link.path} 
+                <Link
+                  to={link.path}
                   style={{
                     color: isActive(link.path) ? 'var(--primary)' : 'var(--text-main)',
                     fontWeight: isActive(link.path) ? 600 : 400,
@@ -73,7 +79,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        
+
         {/* Mobile menu toggle class using inline styles via media query is tricky, we'll rely on an internal toggler and standard react conditional render for simplicity */}
         <div className="mobile-toggle" style={{ cursor: 'pointer' }} onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -97,8 +103,8 @@ const Navbar = () => {
             }}
           >
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
+              <Link
+                key={link.name}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 style={{
