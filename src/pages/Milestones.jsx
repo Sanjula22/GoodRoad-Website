@@ -23,35 +23,35 @@ const Milestones = () => {
     {
       id: 1,
       title: 'Project Proposal',
-      date: 'Feb 15, 2026',
+      date: 'September, 2025',
       marks: '10%',
       description: 'Initial submission of the project scope, objectives, methodology, and the feasibility study. The proposal establishes the foundation of the GoodRoad project architecture and literature survey.'
     },
     {
       id: 2,
       title: 'Progress Presentation - 1',
-      date: 'April 10, 2026',
+      date: 'January, 2026',
       marks: '15%',
       description: 'Detailed showcase of early design phases, basic prototyping, and initial evaluations of the core algorithms. Assessed on clarity of UI mockups and completion of core backend services.'
     },
     {
       id: 3,
       title: 'Progress Presentation - 2',
-      date: 'June 05, 2026',
+      date: 'March, 2026',
       marks: '20%',
       description: 'Comprehensive demonstration of the working system involving integration of front-end and real-time backend processing. Evaluation focuses on system stability and core feature completion.'
     },
     {
       id: 4,
       title: 'Final Assessment',
-      date: 'August 20, 2026',
+      date: 'May, 2026',
       marks: '40%',
       description: 'The ultimate presentation of the completed GoodRoad ecosystem. Includes project demonstrations, system performance measurements, and final report submission detailing all aspects of the pipeline.'
     },
     {
       id: 5,
       title: 'Viva',
-      date: 'September 05, 2026',
+      date: 'May, 2026',
       marks: '15%',
       description: 'Individual oral examinations testing each group member\'s contribution, depth of knowledge, and justification of technology choices throughout the software development lifecycle.'
     }

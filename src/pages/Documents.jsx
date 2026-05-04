@@ -122,22 +122,22 @@ const Documents = () => {
           title: 'Final Report',
           subtitle: 'Document',
           date: 'May 2026',
-          status: 'Pending',
-          link: '/Documents/Final Documents/Individual Final Reopts/Sanjula.pdf'
+          status: 'Available',
+          link: '/Documents/Final Documents/Final Report/Final.pdf'
         },
         {
           title: 'Individual Report',
           subtitle: 'Kanishka Rathnayake',
           date: 'May 2026',
-          status: 'Pending',
-          link: '/Documents/Final Documents/Individual Final Reopts/Sanjula.pdf',
+          status: 'Available',
+          link: '/Documents/Final Documents/Individual Final Reopts/Kanishka.pdf',
         },
         {
           title: 'Individual Report',
           subtitle: 'Nimesh Liyanage',
           date: 'May 2026',
-          status: 'Pending',
-          link: '/Documents/Final Documents/Individual Final Reopts/Sanjula.pdf',
+          status: 'Available',
+          link: '/Documents/Final Documents/Individual Final Reopts/Nimesh.pdf',
         },
         {
           title: 'Individual Report',
