@@ -66,8 +66,8 @@ const Presentations = () => {
     {
       title: 'Final Presentation',
       date: 'May 2026',
-      available: false,
-      link: '/Presentations/Progress Presentation 1.pdf',
+      available: true,
+      link: '/Presentations/Final.pdf',
       image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     }
   ];
